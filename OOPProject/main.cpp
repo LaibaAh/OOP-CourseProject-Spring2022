@@ -5,14 +5,15 @@
 int main(int argc, char *args[])
 {
     // Start up SDL and create window
-    if (!init())
+    game game;
+    if (!game.init())
     {
         printf("Failed to initialize!\n");
     }
     else
     {
         // Load media
-        if (!loadMedia())
+        if (!game.loadMedia())
         {
             printf("Failed to load media!\n");
         }
@@ -38,16 +39,16 @@ int main(int argc, char *args[])
                 }
 
                 // Apply the PNG image
-                SDL_BlitSurface(gPNGSurface, NULL, gScreenSurface, NULL);
+                SDL_BlitSurface(game.gPNGSurface, NULL, game.gScreenSurface, NULL);
 
                 // Update the surface
-                SDL_UpdateWindowSurface(gWindow);
+                SDL_UpdateWindowSurface(game.gWindow);
             }
         }
     }
 
     // Free resources and close SDL
-    close();
+    game.close();
 
     return 0;
 }

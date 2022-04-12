@@ -5,6 +5,7 @@
 
 class game
 {
+public:
     // Screen dimension constants
     const int SCREEN_WIDTH = 1280;
     const int SCREEN_HEIGHT = 720;
@@ -30,5 +31,3 @@ class game
     // Current displayed PNG image
     SDL_Surface *gPNGSurface = NULL;
 };
-
-
