@@ -1,6 +1,10 @@
 #include "game.hpp"
+#include "panda.hpp"
 
 #pragma once
+
+Panda *Panda::instance = 0;
+// Initialize pointer to zero so that it can be initialized in first call to getInstance
 
 int main(int argc, char *args[])
 {
@@ -49,6 +53,11 @@ int main(int argc, char *args[])
 
     // Free resources and close SDL
     game.close();
+
+    Panda *s = s->getinstance(); // for prototyping we have created one instance
+    cout << s->getData() << endl;
+    s->setData(100); // the set data can be used to add apples for our case
+    cout << s->getData() << endl;
 
     return 0;
 }
