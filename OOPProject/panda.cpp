@@ -23,8 +23,6 @@ bool Panda::check_move_up()
 
 void Panda::animate()
 {
-    come_back = true;
-    moverRect.x += 10;
 }
 
 void Panda::moveRight()

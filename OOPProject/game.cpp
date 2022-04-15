@@ -97,3 +97,45 @@ SDL_Surface *game::loadSurface(std::string path)
 
     return optimizedSurface;
 }
+
+void Game::run()
+{
+    bool quit;
+    SDL_Event e;
+
+    //  Declare game class object here.
+
+    while (!quit)
+    {
+        //  Handle events on queue
+        while (SDL_PollEvent(&e) != 0)
+        {
+            //  User requests quit
+            if (e.type == SDL_QUIT)
+            {
+                quit = true;
+            }
+
+            //  Call your game functions here.
+
+            // e.key.keysym.sym == SDLK_RIGHT right key is pressed.
+            // e.key.keysym.sym == SDLK_LEFT  left key is pressed.
+            // e.type == SDL_KEYUP && e.key.keysym.sym == SDLK_ESCAPE  Escape key is pressed.
+            // e.type == SDL_KEYUP && e.key.keysym.sym == SDLK_RETURN  Enter key is pressed.
+            //  e.type == SDL_MOUSEBUTTONDOWN Down button for mouse is pressed.
+
+            // int xMouse, yMouse;
+            // SDL_GetMouseState(&xMouse, &yMouse);
+        }
+
+        SDL_RenderClear(gRenderer);                      // removes everything from renderer.
+        SDL_RenderCopy(gRenderer, gTexture, NULL, NULL); // Draws background to renderer.
+
+        //***********************draw the objects here********************
+
+        //****************************************************************
+        SDL_RenderPresent(gRenderer); // displays the updated renderer
+
+        SDL_Delay(200); // causes sdl engine to delay for specified miliseconds // FPS
+    }
+}

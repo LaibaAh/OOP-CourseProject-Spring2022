@@ -24,6 +24,9 @@ public:
     // Frees media and shuts down SDL
     void close();
 
+    // Main execution of the game
+    void run();
+
     // Loads individual image
     SDL_Surface *loadSurface(std::string path);
 
