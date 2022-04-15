@@ -3,6 +3,11 @@
 #include <stdio.h>
 #include <string>
 
+
+// Coding Progress - Week 1:
+// First screen displayed and linked to the main class
+// A basic prototype of panda class has been implemented using Singleton Design Pattern
+
 class game
 {
 public:
