@@ -2,7 +2,7 @@
 #include <SDL_image.h>
 #include <stdio.h>
 #include <string>
-
+#pragma once
 
 // Coding Progress - Week 1:
 // First screen displayed and linked to the main class

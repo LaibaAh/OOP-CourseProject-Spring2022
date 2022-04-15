@@ -53,14 +53,11 @@ int main(int argc, char *args[])
 
     // Free resources and close SDL
     game.close();
-<<<<<<< HEAD:OOPProject/main.cpp
-=======
 
     Panda *s = s->getinstance(); // for prototyping we have created one instance
     cout << s->getData() << endl;
     s->setData(100); // the set data can be used to add apples for our case
     cout << s->getData() << endl;
->>>>>>> 2c31856ceb512b3fc77b2cd023c5f23fdedffbf6:OOP Project/main.cpp
 
     return 0;
 }
