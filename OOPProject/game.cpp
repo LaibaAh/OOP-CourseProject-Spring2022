@@ -98,7 +98,7 @@ SDL_Surface *game::loadSurface(std::string path)
     return optimizedSurface;
 }
 
-void Game::run()
+void game::run()
 {
     bool quit;
     SDL_Event e;
