@@ -1,6 +1,6 @@
 #include "panda.hpp"
 
-int Panda::draw(SDL_Renderer *gRenderer, SDL_Texture *Panda_0)()
+void Panda::draw(SDL_Renderer *gRenderer, SDL_Texture *Panda_0)
 {
     SDL_RenderCopy(gRenderer, Panda_0, &srcRect, &moverRect);
 }
