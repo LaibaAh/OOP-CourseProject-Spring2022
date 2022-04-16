@@ -3,8 +3,13 @@
 
 #pragma once
 
+<<<<<<< HEAD
 // anda *Panda::instance = 0;
 //  Initialize pointer to zero so that it can be initialized in first call to getInstance
+=======
+//Panda *Panda::instance = 0;
+// Initialize pointer to zero so that it can be initialized in first call to getInstance
+>>>>>>> 888b81efeea12f5a89a37b6d3b5d0ae518628ad3
 
 int main(int argc, char *args[])
 {
