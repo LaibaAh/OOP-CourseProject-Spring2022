@@ -98,44 +98,107 @@ SDL_Surface *game::loadSurface(std::string path)
     return optimizedSurface;
 }
 
-void Game::run()
+/*void Game::run()
 {
-    bool quit;
-    SDL_Event e;
+     bool quit;
+     SDL_Event e;
+     char direction = 's';
+     Gamescreen Gamescreen(gRenderer, Slide2);
+     // Pacman p1;
+     while (!quit) // gameloop
+     {
+         // Handle events on queue
+         while (SDL_PollEvent(&e) != 0)
+         {
+             // User requests quit
+             if (e.type == SDL_QUIT)
+             {
+                 quit = true;
+             }
 
-    //  Declare game class object here.
+             if (e.type == SDL_MOUSEBUTTONDOWN)
+             {
 
-    while (!quit)
-    {
-        //  Handle events on queue
-        while (SDL_PollEvent(&e) != 0)
-        {
-            //  User requests quit
-            if (e.type == SDL_QUIT)
-            {
-                quit = true;
-            }
+                 int xMouse, yMouse;
+                 SDL_GetMouseState(&xMouse, &yMouse);
+                 Gamescreen.createObject(xMouse, yMouse);
+                 if (e.type = SDL_KEYDOWN)
+                 {
+                     if (e.key.keysym.sym == SDLK_RIGHT)
+                     {
+                         direction = 'r';
+                     }
+                     else if (e.key.keysym.sym == SDLK_LEFT)
+                     {
+                         direction = 'l';
+                     }
+                     else if (e.key.keysym.sym == SDLK_UP)
+                     {
+                         direction = 'u';
+                     }
+                     else if (e.key.keysym.sym == SDLK_DOWN)
+                     {
+                         direction = 'd';
+                     }
+                 }
+             }
 
-            //  Call your game functions here.
+             // SDL_RenderClear(gRenderer);                      // removes everything from renderer
+             // SDL_RenderCopy(gRenderer, gTexture, NULL, NULL); // Draws background to renderer
+             SDL_UpdateWindowSurface(game.gWindow); // Draws background to renderer
+             SDL_UpdateWindowSurface(game.gWindow);
 
-            // e.key.keysym.sym == SDLK_RIGHT right key is pressed.
-            // e.key.keysym.sym == SDLK_LEFT  left key is pressed.
-            // e.type == SDL_KEYUP && e.key.keysym.sym == SDLK_ESCAPE  Escape key is pressed.
-            // e.type == SDL_KEYUP && e.key.keysym.sym == SDLK_RETURN  Enter key is pressed.
-            //  e.type == SDL_MOUSEBUTTONDOWN Down button for mouse is pressed.
+             //***********************draw the objects here********************
+             if (blit_called == true)
+             {
 
-            // int xMouse, yMouse;
-            // SDL_GetMouseState(&xMouse, &yMouse);
-        }
+                 Gamescreen.drawPanda();
+                 // spacmania.drawPacman();
+                 switch (direction)
+                 {
+                 case 'r':
+                     if (Gamescreen.can_move_right() == true)
+                     {
+                         Gamescreen.move_right();
+                     }
+                     break;
+                 case 'l':
+                     if (Gamescreen.can_move_left() == true)
+                     {
+                         Gamescreen.move_left();
+                     }
+                     break;
+                 case 'u':
+                     if (Gamescreen.can_move_up() == true)
+                     {
+                         Gamescreen.move_up();
+                     }
+                     break;
+                 case 'd':
+                     if (Gamescreen.can_move_down() == true)
+                     {
+                         Gamescreen.move_down();
+                     }
+                     break;
+                 }
+             }
 
-        SDL_RenderClear(gRenderer);                      // removes everything from renderer.
-        SDL_RenderCopy(gRenderer, gTexture, NULL, NULL); // Draws background to renderer.
+             SDL_RenderPresent(gRenderer);
 
-        //***********************draw the objects here********************
+             //****************************************************************
+             // displays the updated renderer
 
-        //****************************************************************
-        SDL_RenderPresent(gRenderer); // displays the updated renderer
+             SDL_Delay(500); // causes sdl engine to delay for specified miliseconds
+         }
+         .move_down();
+         break;
+     }
+ }
 
-        SDL_Delay(200); // causes sdl engine to delay for specified miliseconds // FPS
-    }
-}
+ SDL_RenderPresent(gRenderer);
+
+ //****************************************************************
+ // displays the updated renderer
+
+ SDL_Delay(500); // causes sdl engine to delay for specified miliseconds
+}*/

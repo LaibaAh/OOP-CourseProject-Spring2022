@@ -25,7 +25,7 @@ public:
     void close();
 
     // Main execution of the game
-    void run();
+    // void run();
 
     // Loads individual image
     SDL_Surface *loadSurface(std::string path);
